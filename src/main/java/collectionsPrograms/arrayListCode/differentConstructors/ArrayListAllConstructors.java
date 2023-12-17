@@ -13,6 +13,7 @@ public class ArrayListAllConstructors {
         //1. default constructor
         ArrayList<String> defaultArrList = new ArrayList<>();
         System.out.println("defaultArrList elements:"+defaultArrList);
+        System.out.println("defaultArrList Size:"+defaultArrList.size());
 
         //2. constructor with size
         ArrayList<Integer> sizeArrList = new ArrayList<>(10);
