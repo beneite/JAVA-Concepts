@@ -1,7 +1,7 @@
 /**
  *
  */
-package collectionsPrograms.vectors;
+package collectionsPrograms.Vector;
 
 import java.util.HashSet;
 import java.util.Vector;
@@ -28,6 +28,9 @@ public class VectorConstructors {
         hs.add("A");
         hs.add("B");
         hs.add("C");
+
+        Vector<String> vct4 = new Vector<>(hs);
+        System.out.println("vct4 elements:"+vct4);
 
 
     }
