@@ -1,9 +1,8 @@
 /** add, addAll, remove, heterogeneous elements
  *
  */
-package collectionsPrograms.arrayListCode.allMethods;
+package collectionsPrograms.ArrayList.allMethods;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class arrayListAllMethods {
