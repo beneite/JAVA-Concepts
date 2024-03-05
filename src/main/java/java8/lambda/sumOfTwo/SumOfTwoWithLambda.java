@@ -8,12 +8,6 @@ interface inter{
     public void sumOfTwo(int a, int b);
 }
 
-class Sum implements inter{
-
-    public void sumOfTwo(int a, int b) {
-
-    }
-}
 public class SumOfTwoWithLambda {
     public static void main(String[] args){
 
