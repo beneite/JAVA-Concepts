@@ -3,21 +3,21 @@
  */
 package java8.lambda.helloWorld;
 
-interface inter{
-            public void displayHello();
-        }
+interface inter {
+    public void displayHello();
+}
 
-        class demo implements inter{
+class demo implements inter {
 
-            @Override
-            public void displayHello() {
-                System.out.println("Hello");
-            }
-        }
+    @Override
+    public void displayHello() {
+        System.out.println("Hello");
+    }
+}
 
 public class WithOutLambda {
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
         inter i = new demo();
         i.displayHello();
     }
