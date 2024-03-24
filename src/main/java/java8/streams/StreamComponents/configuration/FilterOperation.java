@@ -1,7 +1,6 @@
 package java8.streams.StreamComponents.configuration;
 
 import java.util.ArrayList;
-import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 /**
