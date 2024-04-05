@@ -5,4 +5,4 @@ OOPs practise Link: https://www3.ntu.edu.sg/home/ehchua/programming/java/J3f_OOP
 - dataTypes: Enum
 - Java 8: Lambda, Streams
 - OOps Concepts
-- Multi-Threading: Thread creation (Thread, Runnable)
+- Multi-Threading: Thread creation (Thread, Runnable), Thread Class constructors
