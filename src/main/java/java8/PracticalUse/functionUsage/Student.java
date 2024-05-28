@@ -7,6 +7,7 @@ public class Student {
     private String name;
     private Integer marks;
     private Character grade;
+    private String status;
 
     public Student(String name, Integer marks){
         this.name = name;
@@ -26,11 +27,16 @@ public class Student {
         return grade;
     }
 
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
     @Override
     public String toString() {
         return "Student{" +
                 "name='" + name + '\'' +
                 ", marks=" + marks +
+                ", status=" + status +
                 ", grade=" + grade +
                 '}';
     }
