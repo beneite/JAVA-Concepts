@@ -36,7 +36,7 @@ public class GradeCalculator {
 
         for(Student singleStudent: studentArrayList){
             if(setStatus.test(singleStudent))
-                singleStudent.setStatus("Fail !!!");
+                singleStudent.setStatus("Fail ❌");
             else
                 singleStudent.setStatus("Pass ✅");
             Character grade = gradeCalculator.apply(singleStudent);
