@@ -8,5 +8,6 @@
 
 
 **_Notes Link:_**
+- Java 8 Lambda Notes: [lambda](src/main/java/java8/lambda/LambdaNotes.md)
 - Streams Notes: [Streams Note](src/main/java/java8/streams/StreamComponents/StreamNote.md)
 - OOPs practise Link: [Website link](https://www3.ntu.edu.sg/home/ehchua/programming/java/J3f_OOPExercises.html)
