@@ -33,7 +33,10 @@
 | `findAny()`              | Returns an arbitrary element of the stream (if present)                                | Any             | `Optional<Integer> any = stream.findAny()`                      |
 | `findFirst()`            | Returns the first element of the stream (if any)                                       | Any             | `Optional<Integer> first = stream.findFirst()`                  |
 
-> [!IMPORTANT] Java Streams - Key Points and Best Practices
+> [!IMPORTANT] 
+> Points To remember
+
+## Java Streams - Key Points and Best Practices
 ## 1. Streams Are Not Reusable
 
 - **Once Consumed, Cannot Be Reused**: Streams can be used only once. Once a terminal operation is performed, the stream is considered consumed and cannot be reused. Create a new stream for each sequence of operations.
