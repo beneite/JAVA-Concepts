@@ -9,7 +9,7 @@ some common types of lambda expressions based on the functional interfaces they 
 | Type           | Description                                                                                            | Example                             |
 |----------------|--------------------------------------------------------------------------------------------------------|-------------------------------------|
 | Consumer       | Lambda expression that takes an argument and performs some operation without returning any result.     | `(x) -> System.out.println(x)`      |
-| Supplier       | Lambda expression that takes no arguments and produces a result.                                       | `() -> Math.random()`               |
+| Supplier       | Lambda expression that takes no arguments and return a result.                                         | `() -> Math.random()`               |
 | Predicate      | Lambda expression that takes an argument and returns a boolean result based on some condition.         | `(x) -> x > 10`                     |
 | Function       | Lambda expression that takes an argument and produces a result.                                        | `(x) -> x * 2`                      |
 | UnaryOperator  | Special case of a function where the input and output types are the same.                              | `(x) -> x * x`                      |
