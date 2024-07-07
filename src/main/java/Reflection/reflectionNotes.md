@@ -101,11 +101,21 @@ The java.lang.Class class performs mainly two tasks:
 
 ### How to get the object of Class class?
 There are 3 ways to get the instance of Class class. They are as follows:
-* [forName()](src/main/java/Reflection/ClassObjects/ForNameExample.java) method of Class class 
-* getClass() method of Object class
-* the .class syntax
+* [forName()](getClassClassObject/ForNameExample.java) method of Class class 
+* [getClass()](getClassClassObject/GetClassExample.java) method of Object class
+* the [.class](getClassClassObject/UsingClassName.java) syntax
 1) **forName() method of Class class**
    - is used to load the class dynamically or to load the particular class byte code.
    - get the meta data of the class
    - returns the instance of Class class.
    - It should be used if you know the fully qualified name of class.This cannot be used for primitive types.
+
+2) **getClass() method of Object class**
+   - It returns the instance of Class class. It should be used if you know the type. 
+   - Moreover, it can be used with primitives.
+3) **The .class syntax**
+   - If a type is available, but there is no instance, then it is possible to obtain a Class by appending ".class" to the name of the type.
+   - It can be used for primitive data types also.
+
+
+
