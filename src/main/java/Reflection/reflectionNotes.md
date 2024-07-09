@@ -85,37 +85,66 @@ The java.lang.Class class performs mainly two tasks:
 
 ### Commonly used methods of Class class:
 
-| Method                                                                                                                  | Description                                               |
-|-------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------|
-| 1) public String getName()                                                                                              | returns the class name                                    |
-| 2) public static Class forName(String className)throws ClassNotFoundException                                           | loads the class and returns the reference of Class class. |
-| 3) public Object newInstance()throws InstantiationException,IllegalAccessException                                      | creates new instance.                                     |
-| 4) public boolean isInterface()                                                                                         | checks if it is interface.                                |
-| 5) public boolean isArray()                                                                                             | checks if it is array.                                    |
-| 6) public boolean isPrimitive()                                                                                         | checks if it is primitive.                                |
-| 7) public Class getSuperclass()                                                                                         | returns the superclass class reference.                   |
-| 8) public Field\[\] getDeclaredFields()throws SecurityException                                                         | returns the total number of fields of this class.         |
-| 9) public Method\[\] getDeclaredMethods()throws SecurityException                                                       | returns the total number of methods of this class.        |
-| 10) public Constructor\[\] getDeclaredConstructors()throws SecurityException                                            | returns the total number of constructors of this class.   |
-| 11) public Method getDeclaredMethod(String name,Class\[\] parameterTypes)throws NoSuchMethodException,SecurityException | returns the method class instance.                        |
+# java.lang.Class Methods
+
+In Java, the `java.lang.Class` class is part of the reflection API and provides methods to get information about the
+classes and objects during runtime. Below are some commonly used methods of the `Class` class: [Program Link](JavaLangClassMethods/AllMethods.java)
+
+| Category                                 | Method Signature                                                    | Description                                                                                                                                                                                                    |
+|------------------------------------------|---------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Getting Class Information**            | `String getName()`                                                  | Returns the name of the class.                                                                                                                                                                                 |
+|                                          | `String getSimpleName()`                                            | Returns the simple name of the class.                                                                                                                                                                          |
+|                                          | `Package getPackage()`                                              | Returns the package of the class.                                                                                                                                                                              |
+|                                          | `ClassLoader getClassLoader()`                                      | Returns the class loader of the class.                                                                                                                                                                         |
+|                                          | `Type getGenericSuperclass()`                                       | Returns the superclass of the class.                                                                                                                                                                           |
+| **Creating Instances**                   | `T newInstance()`                                                   | Creates a new instance of the class using the no-arg constructor.                                                                                                                                              |
+| **Retrieving Annotations**               | `<A extends Annotation> A getAnnotation(Class<A> annotationClass)`  | Returns the annotation of the specified type.                                                                                                                                                                  |
+|                                          | `Annotation[] getAnnotations()`                                     | Returns all annotations present on the class.                                                                                                                                                                  |
+| **Getting Fields**                       | `Field getField(String name)`                                       | Returns the public field with the specified name.                                                                                                                                                              |
+|                                          | `Field[] getFields()`                                               | Returns all the public fields.                                                                                                                                                                                 |
+|                                          | `Field getDeclaredField(String name)`                               | Returns the specified field (including private and protected).                                                                                                                                                 |
+|                                          | `Field[] getDeclaredFields()`                                       | Returns all fields (including private and protected).                                                                                                                                                          |
+| **Getting Methods**                      | `Method getMethod(String name, Class<?>... parameterTypes)`         | Returns the public method with the specified name and parameter types.                                                                                                                                         |
+|                                          | `Method[] getMethods()`                                             | Returns all the public methods.                                                                                                                                                                                |
+|                                          | `Method getDeclaredMethod(String name, Class<?>... parameterTypes)` | Returns the specified method (including private and protected).                                                                                                                                                |
+|                                          | `Method[] getDeclaredMethods()`                                     | Returns all methods (including private and protected).                                                                                                                                                         |
+| **Getting Constructors**                 | `Constructor<T> getConstructor(Class<?>... parameterTypes)`         | Returns the public constructor with the specified parameter types.                                                                                                                                             |
+|                                          | `Constructor<?>[] getConstructors()`                                | Returns all the public constructors.                                                                                                                                                                           |
+|                                          | `Constructor<T> getDeclaredConstructor(Class<?>... parameterTypes)` | Returns the specified constructor (including private and protected).                                                                                                                                           |
+|                                          | `Constructor<?>[] getDeclaredConstructors()`                        | Returns all constructors (including private and protected).                                                                                                                                                    |
+| **Superclasses and Interfaces**          | `Class<? super T> getSuperclass()`                                  | Returns the superclass of the class.                                                                                                                                                                           |
+|                                          | `Class<?>[] getInterfaces()`                                        | Returns the interfaces implemented by the class.                                                                                                                                                               |
+| **Modifiers**                            | `int getModifiers()`                                                | Returns the modifiers of the class or interface represented by this `Class` object (e.g., public, private, abstract).                                                                                          |
+| **Instance Checking and Casting**        | `boolean isInstance(Object obj)`                                    | Determines if the specified object is an instance of the class.                                                                                                                                                |
+|                                          | `boolean isAssignableFrom(Class<?> cls)`                            | Determines if the class or interface represented by this `Class` object is either the same as, or is a superclass or superinterface of, the class or interface represented by the specified `Class` parameter. |
+|                                          | `T cast(Object obj)`                                                | Casts an object to the class or interface represented by this `Class` object.                                                                                                                                  |
+| **Array and Primitive Type Information** | `boolean isArray()`                                                 | Determines if the `Class` object represents an array class.                                                                                                                                                    |
+|                                          | `boolean isPrimitive()`                                             | Determines if the `Class` object represents a primitive type.                                                                                                                                                  |
+
+These methods allow you to dynamically interact with and inspect Java classes at runtime, which is a powerful feature
+for tasks such as building frameworks, libraries, and tools that need to work with arbitrary classes.
 
 ### How to get the object of Class class?
+
 There are 3 ways to get the instance of Class class. They are as follows:
-* [forName()](getClassClassObject/ForNameExample.java) method of Class class 
+
+* [forName()](getClassClassObject/ForNameExample.java) method of Class class
 * [getClass()](getClassClassObject/GetClassExample.java) method of Object class
 * the [.class](getClassClassObject/UsingClassName.java) syntax
+
 1) **forName() method of Class class**
-   - is used to load the class dynamically or to load the particular class byte code.
-   - get the meta data of the class
-   - returns the instance of Class class.
-   - It should be used if you know the fully qualified name of class.This cannot be used for primitive types.
+    - is used to load the class dynamically or to load the particular class byte code.
+    - get the meta data of the class
+    - returns the instance of Class class.
+    - It should be used if you know the fully qualified name of class.This cannot be used for primitive types.
 
 2) **getClass() method of Object class**
-   - It returns the instance of Class class. It should be used if you know the type. 
-   - Moreover, it can be used with primitives.
+    - It returns the instance of Class class. It should be used if you know the type.
+    - Moreover, it can be used with primitives.
 3) **The .class syntax**
-   - If a type is available, but there is no instance, then it is possible to obtain a Class by appending ".class" to the name of the type.
-   - It can be used for primitive data types also.
+    - If a type is available, but there is no instance, then it is possible to obtain a Class by appending ".class" to
+      the name of the type.
+    - It can be used for primitive data types also.
 
 
 
