@@ -85,7 +85,7 @@ The java.lang.Class class performs mainly two tasks:
 
 ### Commonly used methods of Class class:
 
-# java.lang.Class Methods
+# `java.lang.Class` Methods
 
 In Java, the `java.lang.Class` class is part of the reflection API and provides methods to get information about the
 classes and objects during runtime. Below are some commonly used methods of the `Class` class: [Program Link](JavaLangClassMethods/AllMethods.java)
@@ -148,7 +148,7 @@ There are 3 ways to get the instance of Class class. They are as follows:
 
 # `java.lang.reflect.Field` Methods
 
-This document provides an overview of the main methods available in the `java.lang.reflect.Field` class, organized by category.
+This document provides an overview of the main methods available in the `java.lang.reflect.Field` class, organized by category.[Program Link](JavaLangReflectField/FieldReflectionExample.java)
 
 | **Category**           | **Method**                         | **Description**                                                            | **Example**                                      |
 |------------------------|------------------------------------|----------------------------------------------------------------------------|--------------------------------------------------|
@@ -179,7 +179,65 @@ This document provides an overview of the main methods available in the `java.la
 |                        | `setAccessible(boolean flag)`      | Sets the accessible flag for this field.                                    | `field.setAccessible(true);`                     |
 
 
+# `java.lang.reflect.Constructor` Methods
+
+This document provides an overview of the main methods available in the `java.lang.reflect.Constructor` class, organized by category.[Program Link](JavaLangReflectConstructor/ConstructorReflectionExample.java)
+
+| **Category**           | **Method**                         | **Description**                                                                  | **Example**                                             |
+|------------------------|------------------------------------|----------------------------------------------------------------------------------|---------------------------------------------------------|
+| **Get Constructor Info**| `getName`                          | Returns the name of the constructor (which is the name of the declaring class).  | `String constructorName = constructor.getName();`       |
+|                        | `getDeclaringClass`                | Returns the `Class` object representing the class that declares this constructor.| `Class<?> declaringClass = constructor.getDeclaringClass();` |
+|                        | `getModifiers`                     | Returns the Java language modifiers for the constructor as an integer.           | `int modifiers = constructor.getModifiers();`           |
+|                        | `getParameterTypes`                | Returns an array of `Class` objects representing the parameter types of the constructor.| `Class<?>[] paramTypes = constructor.getParameterTypes();` |
+|                        | `getParameterCount`                | Returns the number of formal parameters for the constructor.                     | `int paramCount = constructor.getParameterCount();`     |
+|                        | `getExceptionTypes`                | Returns an array of `Class` objects representing the exception types thrown by the constructor.| `Class<?>[] exceptionTypes = constructor.getExceptionTypes();` |
+| **Invoke Constructor** | `newInstance(Object... initargs)`  | Uses the constructor to create and initialize a new instance of the class.       | `Object obj = constructor.newInstance(arg1, arg2);`     |
+| **Handle Accessibility**| `isAccessible`                     | Returns the value of the accessible flag for this constructor.                   | `boolean isAccessible = constructor.isAccessible();`    |
+|                        | `setAccessible(boolean flag)`      | Sets the accessible flag for this constructor.                                   | `constructor.setAccessible(true);`                      |
+
+
+---
+      
+
 ## Interview questions:
+
 ### 1. _getDeclaredMethods() v/s getMethod():_ 
 **getMethod**: Retrieves only public methods, including those inherited from superclasses and interfaces.
 **getDeclaredMethod** can retrieve public methods as well as private, protected, and package-private methods declared in the class. Unlike getMethod, which only retrieves public methods (including inherited ones), getDeclaredMethod focuses on methods declared specifically within the class, regardless of their access modifiers.
+---
+### 2. _how newInstance is different from Object obj = new Object ();_
+### `newInstance()` vs `new Object()`
+
+This document compares the `newInstance()` method from `java.lang.reflect.Constructor` with the regular object creation syntax using `new`.
+
+### `new Object()`
+
+1. **Static Typing**: Creates a new instance of an object with known type at compile-time.
+
+2. **Direct Invocation**: Instantiates classes directly using their constructors.
+
+3. **Compile-Time Checking**: Ensures class existence, accessible constructors, and parameter matching at compile-time.
+
+4. **Type Safety**: `obj` type is known at compile-time, so type casting isn't required.
+
+### `Constructor.newInstance()`
+
+1. **Dynamic Typing**: Creates instances of classes dynamically using reflection, suitable for cases where class types are determined at runtime.
+
+2. **Reflection**: Allows instantiation of classes whose names are known only at runtime.
+
+3. **Exception Handling**: Requires handling `InstantiationException`, `IllegalAccessException`, and `InvocationTargetException` exceptions.
+
+4. **Accessibility**: Can bypass accessibility restrictions using `setAccessible(true)` on the `Constructor` object.
+
+### Comparison Summary
+
+- **Static vs. Dynamic**: `new Object()` is static instantiation known at compile-time, while `newInstance()` is dynamic and determined at runtime.
+
+- **Compile-Time Checking**: `new Object()` is checked at compile-time, `newInstance()` uses reflection and errors can occur at runtime.
+
+- **Flexibility**: `newInstance()` provides flexibility to instantiate classes dynamically, suitable for reflective and dynamic programming needs.
+
+In summary, `new Object()` is straightforward for standard object creation, while `newInstance()` via reflection is powerful for dynamic and flexible instantiation, useful in advanced programming scenarios.
+
+---
