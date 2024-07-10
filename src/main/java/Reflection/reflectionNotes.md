@@ -197,14 +197,34 @@ This document provides an overview of the main methods available in the `java.la
 
 
 ---
-      
+
+# `java.lang.reflect.Method` Methods
+
+This document provides an overview of the main methods available in the `java.lang.reflect.Method` class, organized by category.[Program link](JavaLangReflectMethod/MethodReflectionExample.java)
+
+| **Category**           | **Method**                         | **Description**                                                                 | **Example**                                                   |
+|------------------------|------------------------------------|---------------------------------------------------------------------------------|---------------------------------------------------------------|
+| **Get Method Info**    | `getName`                          | Returns the name of the method.                                                 | `String methodName = method.getName();`                        |
+|                        | `getDeclaringClass`                | Returns the `Class` object representing the class that declares the method.      | `Class<?> declaringClass = method.getDeclaringClass();`         |
+|                        | `getModifiers`                     | Returns the Java language modifiers for the method as an integer.                | `int modifiers = method.getModifiers();`                       |
+|                        | `getReturnType`                    | Returns a `Class` object representing the return type of the method.             | `Class<?> returnType = method.getReturnType();`                 |
+|                        | `getParameterTypes`                | Returns an array of `Class` objects representing the parameter types of the method.| `Class<?>[] paramTypes = method.getParameterTypes();`         |
+|                        | `getExceptionTypes`                | Returns an array of `Class` objects representing the exception types thrown by the method.| `Class<?>[] exceptionTypes = method.getExceptionTypes();`    |
+|                        | `isVarArgs`                        | Returns true if this method was declared with a variable number of arguments.    | `boolean isVarArgs = method.isVarArgs();`                       |
+| **Invoke Method**      | `invoke(Object obj, Object... args)`| Invokes the underlying method represented by this `Method` object.              | `Object result = method.invoke(instance, arg1, arg2);`         |
+| **Handle Accessibility**| `isAccessible`                     | Returns the value of the accessible flag for this method.                        | `boolean isAccessible = method.isAccessible();`                 |
+|                        | `setAccessible(boolean flag)`      | Sets the accessible flag for this method.                                        | `method.setAccessible(true);`                                   |
+ 
+---
 
 ## Interview questions:
 
 ### 1. _getDeclaredMethods() v/s getMethod():_ 
 **getMethod**: Retrieves only public methods, including those inherited from superclasses and interfaces.
 **getDeclaredMethod** can retrieve public methods as well as private, protected, and package-private methods declared in the class. Unlike getMethod, which only retrieves public methods (including inherited ones), getDeclaredMethod focuses on methods declared specifically within the class, regardless of their access modifiers.
----
+
+<hr style="border:2px solid cyan">
+
 ### 2. _how newInstance is different from Object obj = new Object ();_
 ### `newInstance()` vs `new Object()`
 
@@ -240,4 +260,4 @@ This document compares the `newInstance()` method from `java.lang.reflect.Constr
 
 In summary, `new Object()` is straightforward for standard object creation, while `newInstance()` via reflection is powerful for dynamic and flexible instantiation, useful in advanced programming scenarios.
 
----
+<hr style="border:2px solid cyan">
