@@ -146,5 +146,40 @@ There are 3 ways to get the instance of Class class. They are as follows:
       the name of the type.
     - It can be used for primitive data types also.
 
+# `java.lang.reflect.Field` Methods
+
+This document provides an overview of the main methods available in the `java.lang.reflect.Field` class, organized by category.
+
+| **Category**           | **Method**                         | **Description**                                                            | **Example**                                      |
+|------------------------|------------------------------------|----------------------------------------------------------------------------|--------------------------------------------------|
+| **Get Field Information** | `getName`                          | Returns the name of the field.                                             | `String fieldName = field.getName();`            |
+|                        | `getType`                          | Returns the `Class` object representing the type of the field.              | `Class<?> fieldType = field.getType();`          |
+|                        | `getDeclaringClass`                | Returns the `Class` object representing the class that declares the field. | `Class<?> declaringClass = field.getDeclaringClass();` |
+|                        | `getModifiers`                     | Returns the Java language modifiers for the field as an integer.            | `int modifiers = field.getModifiers();`          |
+|                        | `isSynthetic`                      | Returns `true` if this field is a synthetic field; `false` otherwise.       | `boolean isSynthetic = field.isSynthetic();`     |
+| **Access Field Values**| `get(Object obj)`                  | Returns the value of the field on the specified object.                     | `Object value = field.get(obj);`                 |
+|                        | `getBoolean(Object obj)`           | Returns the value of the field as a `boolean`.                              | `boolean value = field.getBoolean(obj);`         |
+|                        | `getByte(Object obj)`              | Returns the value of the field as a `byte`.                                 | `byte value = field.getByte(obj);`               |
+|                        | `getChar(Object obj)`              | Returns the value of the field as a `char`.                                 | `char value = field.getChar(obj);`               |
+|                        | `getShort(Object obj)`             | Returns the value of the field as a `short`.                                | `short value = field.getShort(obj);`             |
+|                        | `getInt(Object obj)`               | Returns the value of the field as an `int`.                                 | `int value = field.getInt(obj);`                 |
+|                        | `getLong(Object obj)`              | Returns the value of the field as a `long`.                                 | `long value = field.getLong(obj);`               |
+|                        | `getFloat(Object obj)`             | Returns the value of the field as a `float`.                                | `float value = field.getFloat(obj);`             |
+|                        | `getDouble(Object obj)`            | Returns the value of the field as a `double`.                               | `double value = field.getDouble(obj);`           |
+| **Modify Field Values**| `set(Object obj, Object value)`    | Sets the field value on the specified object to the new value.              | `field.set(obj, newValue);`                      |
+|                        | `setBoolean(Object obj, boolean z)`| Sets the field value as a `boolean`.                                        | `field.setBoolean(obj, newValue);`               |
+|                        | `setByte(Object obj, byte b)`      | Sets the field value as a `byte`.                                           | `field.setByte(obj, newValue);`                  |
+|                        | `setChar(Object obj, char c)`      | Sets the field value as a `char`.                                           | `field.setChar(obj, newValue);`                  |
+|                        | `setShort(Object obj, short s)`    | Sets the field value as a `short`.                                          | `field.setShort(obj, newValue);`                 |
+|                        | `setInt(Object obj, int i)`        | Sets the field value as an `int`.                                           | `field.setInt(obj, newValue);`                   |
+|                        | `setLong(Object obj, long l)`      | Sets the field value as a `long`.                                           | `field.setLong(obj, newValue);`                  |
+|                        | `setFloat(Object obj, float f)`    | Sets the field value as a `float`.                                          | `field.setFloat(obj, newValue);`                 |
+|                        | `setDouble(Object obj, double d)`  | Sets the field value as a `double`.                                         | `field.setDouble(obj, newValue);`                |
+| **Handle Accessibility**| `isAccessible`                     | Returns the value of the accessible flag for this field.                    | `boolean isAccessible = field.isAccessible();`   |
+|                        | `setAccessible(boolean flag)`      | Sets the accessible flag for this field.                                    | `field.setAccessible(true);`                     |
 
 
+## Interview questions:
+### 1. _getDeclaredMethods() v/s getMethod():_ 
+**getMethod**: Retrieves only public methods, including those inherited from superclasses and interfaces.
+**getDeclaredMethod** can retrieve public methods as well as private, protected, and package-private methods declared in the class. Unlike getMethod, which only retrieves public methods (including inherited ones), getDeclaredMethod focuses on methods declared specifically within the class, regardless of their access modifiers.
