@@ -1,6 +1,6 @@
 <H1> Java Repo details </H1>
 
-- **Collections**: Arraylist, vector, stack, linked list
+- **Collections**: Arraylist, vector, stack, linked list, Queue (Priority queue)
 - **dataTypes**: Enum, Optional
 - **Java 8**: Lambda, Streams, BiFunctional Interfaces, Primitive Interfaces, Practise programs
 - **OOps Concepts**
