@@ -261,3 +261,8 @@ This document compares the `newInstance()` method from `java.lang.reflect.Constr
 In summary, `new Object()` is straightforward for standard object creation, while `newInstance()` via reflection is powerful for dynamic and flexible instantiation, useful in advanced programming scenarios.
 
 <hr style="border:2px solid cyan">
+
+### 3. Reflection Attack:
+https://www.youtube.com/watch?v=M8P2dUC59kA&list=PLFGoYjJG_fqpc4jcqbeXqMIT3-60nfLr6&index=2&ab_channel=NaveenAutomationLabs
+
+<hr style="border:2px solid cyan">
