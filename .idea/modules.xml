@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/JAVA-OOPS-Programs.iml" filepath="$PROJECT_DIR$/.idea/JAVA-OOPS-Programs.iml" />
       <module fileurl="file://$PROJECT_DIR$/asaa/OOPs Programs.iml" filepath="$PROJECT_DIR$/asaa/OOPs Programs.iml" />
     </modules>
   </component>
