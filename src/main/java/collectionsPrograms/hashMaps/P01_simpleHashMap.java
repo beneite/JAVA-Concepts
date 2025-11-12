@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 import java.util.HashMap;
 import java.util.Map;
 
-public class PrintHashMap {
+public class P01_simpleHashMap {
 
     @DataProvider(name = "returnHasMap")
     public Object[] returnTestData(){
