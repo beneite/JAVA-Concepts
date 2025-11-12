@@ -6,6 +6,12 @@ import org.testng.annotations.Test;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Stores entries in a hash table
+ * No order of keys or values
+ * Allows one null key and multiple null values
+ * Not thread-safe
+ */
 public class P01_simpleHashMap {
 
     @DataProvider(name = "returnHasMap")
