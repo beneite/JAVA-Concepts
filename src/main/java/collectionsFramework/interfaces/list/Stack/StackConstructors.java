@@ -1,7 +1,7 @@
 /**
  *
  */
-package collectionsPrograms.Stack;
+package collectionsFramework.interfaces.list.Stack;
 
 import java.util.Stack;
 

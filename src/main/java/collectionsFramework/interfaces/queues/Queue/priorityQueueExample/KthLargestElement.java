@@ -1,7 +1,7 @@
 /**
  *  Kth Largest Element in an Array: https://leetcode.com/problems/kth-largest-element-in-an-array/
  */
-package collectionsPrograms.Queue.priorityQueueExample;
+package collectionsFramework.interfaces.queues.Queue.priorityQueueExample;
 
 import java.util.PriorityQueue;
 

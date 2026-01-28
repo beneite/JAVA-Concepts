@@ -1,7 +1,7 @@
 /**
  *
  */
-package collectionsPrograms.LinkedList;
+package collectionsFramework.interfaces.list.LinkedList;
 
 import java.util.LinkedList;
 
