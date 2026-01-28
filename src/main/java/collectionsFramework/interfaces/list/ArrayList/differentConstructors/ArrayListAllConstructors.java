@@ -1,7 +1,7 @@
 /** Different constructors of ArrayList
  *
  */
-package collectionsPrograms.ArrayList.differentConstructors;
+package collectionsFramework.interfaces.list.ArrayList.differentConstructors;
 
 import java.util.ArrayList;
 import java.util.HashSet;

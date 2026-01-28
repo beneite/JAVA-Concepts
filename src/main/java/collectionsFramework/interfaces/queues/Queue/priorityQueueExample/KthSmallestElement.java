@@ -1,7 +1,7 @@
 /**
  *  Kth Smallest Element in an Array
  */
-package collectionsPrograms.Queue.priorityQueueExample;
+package collectionsFramework.interfaces.queues.Queue.priorityQueueExample;
 
 import java.util.Collections;
 import java.util.PriorityQueue;

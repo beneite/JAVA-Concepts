@@ -1,4 +1,4 @@
-package collectionsPrograms.Queue.priorityQueueExample;
+package collectionsFramework.interfaces.queues.Queue.priorityQueueExample;
 /**
  * If you do not provide a comparator, Java's PriorityQueue will follow the natural ordering of the elements,
  * which for integers is ascending order (i.e., it behaves as a min-heap).

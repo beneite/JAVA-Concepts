@@ -1,7 +1,7 @@
 /**
  *
  */
-package collectionsPrograms.Vector;
+package collectionsFramework.interfaces.list.Vector;
 
 import java.util.Vector;
 

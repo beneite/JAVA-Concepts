@@ -1,4 +1,4 @@
-package collectionsPrograms.hashMaps;
+package collectionsFramework.interfaces.maps.hashMaps;
 
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;

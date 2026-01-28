@@ -1,7 +1,7 @@
 /** add, addAll, remove, heterogeneous elements
  *
  */
-package collectionsPrograms.ArrayList.allMethods;
+package collectionsFramework.interfaces.list.ArrayList.allMethods;
 
 import java.util.ArrayList;
 
